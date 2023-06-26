@@ -52,6 +52,11 @@ class Gcode(object) :
 		# Set original command
 		self.originalCommand = line
 		
+		#check to delete the top 2 lines
+		if "Generated" in line:
+            		line = ""
+             
+		
 		# Check if line contains a comment
 		characterOffset = line.find(';')
 		if characterOffset != -1 :
